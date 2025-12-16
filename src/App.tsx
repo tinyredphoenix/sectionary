@@ -34,6 +34,7 @@ interface FirestoreSectionResult {
     sectionNumber: string;
     sectionTitle: string;
     searchTerms: string[];
+    sectionNumberSearch?: string[]; 
     status: string;
 }
 
@@ -53,7 +54,7 @@ function SearchBar() {
         const addedIds = new Set<string>();
 
         try {
-          // Query for sectionNumber (starts with)
+          // Query 1: sectionNumber (starts with)
           const q1 = firestoreQuery(
             sectionIndexRef,
             orderBy("sectionNumber"),
@@ -70,7 +71,7 @@ function SearchBar() {
             }
           });
 
-          // Query for searchTerms (array-contains for broad keyword match)
+          // Query 2: searchTerms (array-contains for broad keyword match)
           const q2 = firestoreQuery(
               sectionIndexRef,
               where("searchTerms", "array-contains", lowercaseQuery),
@@ -79,6 +80,21 @@ function SearchBar() {
           
           const snapshot2 = await getDocs(q2);
           snapshot2.forEach(doc => {
+            if (!addedIds.has(doc.id)) {
+              combinedResults.push({ id: doc.id, ...doc.data() as FirestoreSectionResult });
+              addedIds.add(doc.id);
+            }
+          });
+
+          // Query 3: sectionNumberSearch (array-contains for numeric prefix match)
+          const q3 = firestoreQuery(
+              sectionIndexRef,
+              where("sectionNumberSearch", "array-contains", lowercaseQuery),
+              limit(10)
+          );
+
+          const snapshot3 = await getDocs(q3);
+          snapshot3.forEach(doc => {
             if (!addedIds.has(doc.id)) {
               combinedResults.push({ id: doc.id, ...doc.data() as FirestoreSectionResult });
               addedIds.add(doc.id);
@@ -189,15 +205,8 @@ function HomePage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center max-w-4xl mx-auto"
         >
-          {/* Status Badge */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-slate-600">Live Database v2.0</span>
-              </div>
-          </div>
-          
-          <h1 className="text-6xl md:text-8xl font-serif font-bold text-slate-900 mb-8 leading-[1.1] tracking-tight">
+          {/* Removed Status Badge and Seed Button Container */}
+          <h1 className="text-6xl md:text-8xl font-serif font-bold text-slate-900 mb-8 leading-[1.1] tracking-tight mt-12">
             Simplify Your <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-500">Legal Search.</span>
           </h1>
@@ -399,7 +408,7 @@ function SectionDetailPage() {
                 {/* Visual Type Indicator */}
                 <div className="shrink-0">
                     <div className="w-20 h-20 rounded-2xl bg-slate-900 text-white flex flex-col items-center justify-center shadow-2xl">
-                        <span className="text-3xl font-serif font-bold">{sectionData.type === 'Income Tax' ? 'IT' : 'GST'}</span>
+                        <span className="text-3xl font-serif font-bold">{sectionData.type === 'INCOME_TAX' ? 'IT' : 'GST'}</span>
                     </div>
                 </div>
             </div>
