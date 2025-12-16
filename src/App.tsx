@@ -69,36 +69,45 @@ function SearchBar() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<FirestoreSectionResult[]>([]);
   const [isFocused, setIsFocused] = useState(false);
-  const navigate = useNavigate(); 
+  // const navigate = useNavigate(); // Navigation disabled per requirements
 
   useEffect(() => {
     const fetchResults = async () => {
-      if (query.length > 1) {
+      // Input handling: Do not run search if input length is 0.
+      if (query.length > 0) {
+        // Input handling: Convert user input to lowercase.
         const lowercaseQuery = query.toLowerCase();
         const sectionIndexRef = collection(db, "section_index");
 
         try {
-          // Query A: sectionNumberSearch array-contains userInput
+          // Query 1 (Section Number Prefix Search)
+          // Query where sectionNumberSearch array-contains userInput
+          // Limit 5
           const queryA = firestoreQuery(
               sectionIndexRef,
               where("sectionNumberSearch", "array-contains", lowercaseQuery),
-              limit(10)
+              limit(5)
           );
 
-          // Query B: searchTerms array-contains userInput
+          // Query 2 (Keyword Search)
+          // Query where searchTerms array-contains userInput
+          // Limit 5
           const queryB = firestoreQuery(
               sectionIndexRef,
               where("searchTerms", "array-contains", lowercaseQuery),
-              limit(10)
+              limit(5)
           );
 
-          // Query C: sectionTitle >= userInput and <= userInput + '\uf8ff'
+          // Query 3 (Title Prefix Search)
+          // Query where sectionTitle >= userInput
+          // Query where sectionTitle <= userInput + '\uf8ff'
+          // Limit 5
           const queryC = firestoreQuery(
             sectionIndexRef,
             orderBy("sectionTitle"),
             startAt(lowercaseQuery),
             endAt(lowercaseQuery + '\uf8ff'),
-            limit(10)
+            limit(5)
           );
 
           // Run in parallel
@@ -122,11 +131,13 @@ function SearchBar() {
               });
           };
 
+          // Merge results from all three queries.
           processSnapshot(snapshotA);
           processSnapshot(snapshotB);
           processSnapshot(snapshotC);
 
-          setResults(combinedResults.slice(0, 10)); // Ensure max 10 results
+          // Limit final results to 10.
+          setResults(combinedResults.slice(0, 10)); 
 
         } catch (error) {
           console.error("Firestore search error:", error);
@@ -138,9 +149,10 @@ function SearchBar() {
       }
     };
 
+    // Add debounce of 400ms before querying Firestore.
     const handler = setTimeout(() => {
         fetchResults();
-    }, 300); // Debounce search
+    }, 400); 
 
     return () => clearTimeout(handler);
   }, [query]);
@@ -188,8 +200,8 @@ function SearchBar() {
             {results.map((result) => (
               <div
                 key={result.id}
-                onClick={() => navigate(`/section/${result.id}`)}
-                className="p-6 cursor-pointer border-b border-slate-50 hover:bg-slate-50 flex items-center justify-between group transition-colors"
+                // onClick={() => navigate(`/section/${result.id}`)} // Disabled as per requirements
+                className="p-6 cursor-default border-b border-slate-50 hover:bg-slate-50 flex items-center justify-between group transition-colors"
               >
                 <div>
                   <div className="font-serif text-lg font-bold text-slate-900 group-hover:text-blue-900 transition-colors">
