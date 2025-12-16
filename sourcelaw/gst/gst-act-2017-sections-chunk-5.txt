@@ -1,0 +1,810 @@
+12. Time of supply of goods. —(1) The liability to pay tax on goods shall arise at the time of supply, 
+as determined in accordance with the provisions of this section.  
+(2) The time of supply of goods shall be the earlier of the following dates, namely: — 
+(a) the date of issue of invoice by the supplier or the last date on which he is required, under          
+1*** section 31, to issue the invoice with respect to the supply; or  
+(b) the date on which the supplier receives the payment with respect to the supply:  
+Provided that where the supplier of taxable goods receives an amount up to one thousand rupees in 
+excess of the amount indicated in the tax invoice, the time of supply to the extent of such excess amount 
+shall, at the option of the said supplier, be the date of issue of invoice in respect of such excess amount.  
+Explanation 1.––For the purposes of clauses ( a) and ( b), “supply” shall be deemed to have been made 
+to the extent it is covered by the invoice or, as the case may be, the payment.  
+Explanation 2.––For the purposes of clause ( b), “the date on which the supplier receives the payment” 
+shall be the date on which the payment is entered in his books of account or the date on which the payment 
+is credited to his bank account, whichever is earlier.  
+(3) In case of supplies in respect of which tax is paid or liable to be paid on reverse charge basis, the 
+time of supply shall be the earliest of the following dates, namely: — 
+(a) the date of the receipt of goods; or  
+(b) the date of payment as entered in the books of account of the recipient or the date on which the 
+payment is debited in his bank account, whichever is earlier; or  
+(c) the date immediately following thirty days from the date of issue of invoice or any other 
+document, by whatever name called, in lieu thereof by the supplier:  
+Provided that where it is not possible to determine the time of supply under clause ( a) or clause ( b) or 
+clause ( c), the time of supply shall be the date of entry in the books of account of the recipient of supply.  
+(4) In case of supply of vouchers by a supplier, the time of supply shall be — 
+(a) the date of issue of voucher, if the supply is identifiable at that point; or  
+(b) the date of redemption of voucher, in all other cases.  
+(5) Where it is not possible to determine the time of supply under the provisions of sub -section ( 2) or 
+sub-section ( 3) or sub -section ( 4), the time of supply shall –– 
+(a) in a case where a periodical return has to be filed, be the date on which such return is to be 
+filed; or  
+(b) in any other case, be the date on which the tax is paid.  
+(6) The time of supply to the extent it relates to an addition in the value of supply by way of interest, 
+late fee or penalty for delayed payment of any consideration shall be the date on which the supplier 
+receives such addition in value.
+
+13. Time of supply of services. —(1) The liability to pay tax on services shall arise at the time of 
+supply, as determined in accordance with the provisions of this section.  
+(2) The time of supply of services shall be the earliest of the following dates, namely: —
+
+1. The words “sub -section ( 1) of” omitted by Act 31 of 2018, s. 6 (w.e.f. 1 -2-2019).  
+27 
+ (a) the date of issue of invoice by the supplier, if the invoice is issued within the period 
+prescribed under 1*** section 31 or the date of receipt of payment, whichever is earlier; or  
+(b) the date of provision of service, if the invoice is not issued within the period prescribed under 
+1*** section 31 or the date of receipt of payment, whichever is earlier; or  
+(c) the date on which the recipient shows the receipt of services in his books of account, in a case 
+where the provisions of clause ( a) or clause ( b) do not apply:  
+Provided that where the supplier of taxable service receives an amount up to one thousand rupees in 
+excess of the amount indicated in the tax invoice, the time of supply to the extent of such excess amount 
+shall, at the option of the said supplier, be the date of issue of invoice relating to such excess amount.  
+Explanation .––For the purposes of clauses ( a) and ( b)–– 
+(i) the supply shall be deemed to have been made to the extent it is covered by the invoice or, as 
+the case may be, the payment;  
+(ii) “the date of receipt of payment” shall be the date on which the payment is entered in the 
+books of account of the supplier or the date on which the payment is credited to his bank account, 
+whichever is earlier.  
+(3) In case of supplies in respect of which tax is paid or liable to be paid on reverse charge basis, the 
+time of supply shall be the earlier of the following dates, namely: –– 
+(a) the date of payment as entered in the books of account of the recipient or the date on which the 
+payment is debited in his bank account, whichever is earlier; or  
+(b) the date immediately following sixty days from the date of issue of invoice or any other 
+document, by whatever name called, in lieu thereof 2[by the supplier, in cases where invoice is required 
+to be issued by the supplier; or ] 
+3[(c) the date of issue of invoice by the recipient, in cases where invoice is to be issued by the 
+recipient: ] 
+Provided that where it is not possible to determine the time of supply under clause ( a) or clause ( b) 
+3[or clause ( c)], the time of supply shall be the date of entry in the books of account of the recipient of 
+supply:  
+Provided further that in case of supply by associated enterprises, where the supplier of service is 
+located outside India, the time of supply shall be the date of entry in the books of account of the recipient 
+of supply or the date of payment, whichever is earlier.  
+(4) In case of supply of vouchers by a supplier, the time of supply shall be –– 
+(a) the date of issue of voucher, if the supply is identifiable at that point; or  
+(b) the date of redemption of voucher, in all other cases.  
+(5) Where it is not possible to determine the time of supply under the provisions of sub -section ( 2) or 
+sub-section ( 3) or sub -section ( 4), the time of supply shall –– 
+(a) in a case where a periodical return has to be filed, be the date on which such return is to be 
+filed; or  
+(b) in any other case, be the date on which the tax is paid.  
+(6) The time of supply to the extent it relates to an addition in the value of supply by way of interest, 
+late fee or penalty for delayed payment of any consideration shall be the date on which the supplier 
+receives such addition in value.
+
+1. The words “sub -section ( 2) of” omitted by Act 31 of 2018, s. 7 (w.e.f. 1 -2-2019).
+
+2. Subs. by Act 15 of 2024, s. 117, for “ by the supplier:” (w.e.f. 1 -11-2024).
+
+3. Ins. by, s. 117, ibid., (w.e.f. 1 -11-2024).  
+28 
+ 14. Change in rate of tax in respect of supply of goods or services. —Notwithstanding anything 
+contained in section 12 or section 13, the time of supply, where there is a change in the rate of tax in 
+respect of goods or services or both, shall be determined in the following manner, namely: –– 
+(a) in case the goods or services or both have been supplied before the change in rate of tax, –– 
+(i) where the invoice for the same has been issued and the payment is also received after the 
+change in rate of tax, the time of supply shall be the date of receipt of payment or the date of issue of 
+invoice, whichever is earlier; or  
+(ii) where the invoice has been issued prior to the change in rate of tax but payment is 
+received after the change in rate of tax, the time of supply shall be the date of issue of invoice; or  
+(iii) where the payment has been received before the change in rate of tax, but the invoice for 
+the same is issued after the change in rate of tax, the time of supply shall be the date of receipt of 
+payment;  
+(b) in case the goods or services or both have been supplied after the change in rate of tax, –– 
+(i) where the payment is received after the change in rate of tax but the invoice has been 
+issued prior to the change in rate of tax, the time of supply shall be the date of receipt of payment; 
+or 
+(ii) where the invoice has been issued and payment is received before the change in rate of 
+tax, the time of supply shall be the date of receipt of payment or date of issue of invoice, 
+whichever is earlier; or  
+(iii) where the invoice has been issued after the change in rate of tax but the payment is 
+received before the change in rate of tax, the time of supply shall be the date of issue of invoice:  
+Provided that the date of receipt of payment shall be the date of credit in the bank account if 
+such credit in the bank account is after four working days from the date of change in the rate of 
+tax. 
+Explanation .––For the purposes of this section, “the date of receipt of payment” shall be the date on 
+which the payment is entered in the books of account of the supplier or the date on which the payment is 
+credited to his bank account, whichever is earlier.
+
+15. Value of taxable supply. —(1) The value of a supply of goods or services or both shall be the 
+transaction value, which is the price actually paid or payable for the said supply of goods or services or 
+both where the supplier and the recipient of the supply are not related and the price is the sole 
+consideration for the supply.  
+(2) The value of supply shall include –– 
+(a) any taxes, duties, cesses, fees and charges levied under any law for the time being in force 
+other than this Act, the State Goods and Services Tax Act, the Union Territory Goods and Services 
+Tax Act and the Goods and Services Tax (Compensation to States) Act, if charged separately by the 
+supplier;  
+(b) any amount that the supplier is liable to pay in relation to such supply but which has been 
+incurred by the recipient of the supply and not included in the price actually paid or payable for the 
+goods or services or both;  
+(c) incidental expenses, including commission and packing, charged by the supplier to the 
+recipient of a supply and any amount charged for anything done by the supplier in respect of the 
+supply of goods or services or both at the time of, or before delivery of goods or supply of services;  
+(d) interest or late fee or penalty for delayed payment of any consideration for any supply; and  
+(e) subsidies directly linked to the price excluding subsidies provided by the Central Government 
+and the State Governments.  
+29 
+ Explanation .––For the purposes of this sub -section, the amount of subsidy shall be included in the 
+value of supply of the supplier who receives the subsidy.  
+(3) The value of the supply shall not include any discount which is given –– 
+(a) before or at the time of the supply if such discount has been duly recorded in the invoice 
+issued in respect of such supply; and  
+(b) after the supply has been effected, if — 
+(i) such discount is established in terms of an agreement entered into at or before the time of 
+such supply and specifically linked to relevant invoices; and  
+ (ii) input tax credit as is attributable to the discount on the basis of document issued by the 
+supplier has been reversed by the recipient of the supply.  
+(4) Where the value of the supply of goods or services or both cannot be determined under                     
+sub-section ( 1), the same shall be determined in such manner as may be prescribed.  
+(5) Notwithstanding anything contained in sub -section ( 1) or sub -section ( 4), the value of such 
+supplies as may be notified by the Government on the recommendations of the Council shall be 
+determined in such manner as may be prescribed.  
+Explanation. —For the purposes of this Act, –– 
+(a) persons shall be deemed to be “related persons” if –– 
+(i) such persons are officers or directors of one another’s businesses;  
+(ii) such persons are legally recognised partners in business;  
+(iii) such persons are employer and employee;  
+(iv) any person directly or indirectly owns, controls or holds twenty -five per cent. or more of 
+the outstanding voting stock or shares of both of them;  
+(v) one of them directly or indirectly controls the other;  
+(vi) both of them are directly or indirectly controlled by a third person;  
+(vii) together they directly or indirectly control a third person; or  
+(viii) they are members of the same family;  
+(b) the term “person” also includes legal persons;  
+(c) persons who are associated in the business of one another in that one is the sole agent or sole 
+distributor or sole concessionaire, howsoever described, of the other, shall be deemed to be related.  
+CHAPTER V  
+INPUT TAX CREDIT
+
+16. Eligibility and conditions for taking input tax credit. —(1) Every registered person shall, 
+subject to such conditions and restrictions as may be prescribed and in the manner specified in section 49, 
+be entitled to take credit of input tax charged on any supply of goods or services or both to him which are 
+used or intended to be used in the course or furtherance of his business and the said amount shall be 
+credited to the electronic credit ledger of such person.  
+(2) Notwithstanding anything contained in this section, no registered person shall be entitled to the 
+credit of any input tax in respect of any supply of goods or services or both to him unless, –– 
+(a) he is in possession of a tax invoice or debit note issued by a supplier registered under this Act, or 
+such other tax paying documents as may be prescribed;  
+30 
+ 1[(aa) the details of the invoice or debit note referred to in clause ( a) has been furnished by the 
+supplier in the statement of outward supplies and such details have been communicated to the 
+recipient of such invoice or debit note in the manner specified under section 37 ;] 
+(b) he has received the goods or services or both.  
+2[Explanation. —For the purposes of this clause, it shall be deemed that the registered person has 
+received the goods or, as the case may be, services –– 
+(i) where the goods are delivered by the supplier to a recipient or any other person on the direction of 
+such registered person, whether acting as an agent or otherwise, before or during movement of goods, 
+either by way of transfer of documents of title to goods or otherwise;  
+(ii) where the services are provided by the supplier to any person on the direction of and on account of 
+such registered person.]  
+3[(ba) the details of input tax credit in respect of the said supply communicated to such registered 
+person under section 38 has not been restricted;]  
+(c) subject to the provisions of 4[section 41  5***], the tax charged in respect of such supply has 
+been actually paid to the Government, either in cash or through utilisation  of input tax credit 
+admissible in respect of the said supply; and  
+(d) he has furnished the return under section 39:  
+Provided that where the goods against an invoice are received in lots or instalments, the registered 
+person shall be entitled to take credit upon receipt of the last lot or instalment:  
+Provided further that where a recipient fails to pay to the supplier of goods or services or both, other than 
+the supplies on which tax is payable on reverse charge basis, the amount towards the value of supply along 
+with tax payable thereon within a period of one hundred and eighty days from the date of issue of invoice 
+by the supplier, an amount equal to the input tax credit availed by the recipient shall be 6[paid by him 
+along with interest payable under section 50 ], in such manner as may be prescribed:  
+Provided also that the recipient shall be entitled to avail of the credit of input tax on payment made by 
+him 7[to the supplier] of the amount towards the value of supply of goods or services or both along with 
+tax payable thereon.  
+(3) Where the registered person has claimed depreciation on the tax component of the cost of capital 
+goods and plant and machinery under the provisions of the Income -tax Act, 1961(43 of 1961), the input 
+tax credit on the said tax component shall not be allowed.  
+(4) A registered person shall not be entitled to take input tax credit in respect of any invoice or debit note 
+for supply of goods or services or both after the 8[thirtieth day of November] following the end of financial 
+year to which such invoice or 9*** debit note pertains or furnishing of the relevant annual return, whichever 
+is earlier.
+
+1. Ins. by Act 13 of 2021, s. 109 (w.e.f. 1 -1-2022).
+
+2. Subs. by Act 31 of 2018, s. 8 , for The Explanation  (w.e.f. 1 -2-2019).
+
+3. Ins. by Act 6 of 2022, s. 100 (w.e.f. 1 -10-2022).
+
+4. Subs. by Act 31 of 2018, s. 8, for “section 41” (w.e.f. 1 -2-2019).
+
+5. The words “ or section 43A” omitted by Act 6 of 2022, s. 100 (w.e.f. 1 -10-2022).
+
+6. Subs. by Act 8 of 2023, s. 138, for “ added to his output tax liability, along with interest thereon” (w.e.f. 1 -10-2023).
+
+7. Ins. by s. 138, ibid. (w.e.f. 1 -10-2023).
+
+8. Subs. by Act 6 of 2022, s. 100, for “due date of furnishing of the return under section 39 for the month of September”      
+(w.e.f. 1 -10-2022).
+
+9. The words “invoice relation to such” omitted by Act 12 of 2020, s. 120 (w.e.f. 1 -01-2021).  
+31 
+ 1[Provided that the registered person shall be entitled to take input tax credit after the due date of 
+furnishing of the return under section 39 for the month of September, 2018 till the due date of furnishing 
+of the return under the said section for the month of March, 2019 in respect of any invoice or invoice 
+relating to such debit note for supply of goods or services or both made during the financial year 2017 -18, 
+the details of which have been uploaded by the supplier under sub -section ( 1) of section 37 till the due 
+date for furnishing the details under sub-section ( 1) of said section for the month of March, 2019.]  
+2[(5) Notwithstanding anything contained in sub -section ( 4), in respect of an invoice or debit note for 
+supply of goods or services or both pertaining to the Financial Years 2017 -18, 2018 -19, 2019 -20 and 
+2020 -21, the registered person shall be entitled to take input tax credit in any return under section 39 
+which is filed up to the thirtieth day of November, 2021.  
+(6) Where registration of a registered person is cancelled under section 29 and subsequently the 
+cancellation of registration is revoked by any order, either under section 30 or pursuant to any order made 
+by the Appellate Authority or the Appellate Tribunal or court and where availment of input tax credit in 
+respect of an invoice or debit note was not restricted under sub -section ( 4) on the date of order of 
+cancellation of registration, the said person shall be entitled to take the input tax credit in respect of such 
+invoice or debit note for supply of goods or services or both, in a return under section 39, –– 
+(i) filed up to thirtieth day of November following the financial year to which such invoice or 
+debit note pertains or furnishing of the relevant annual return, whichever is earlier; or  
+(ii) for the period from the date of cancellation of registration or the effective date of cancellation 
+of registration, as the case may be, till the date of order of revocation of cancellation of registration, 
+where such return is filed within thirty days from the date of order of revocation of cancellation of 
+registration,  
+whichever is later.]
+
+17. Apportionment of credit and blocked credits. —(1) Where the goods or services or both are used 
+by the registered person partly for the purpose of any business and partly for other purposes, the amount of 
+credit shall be restricted to so much of the input tax as is attributable to the purposes of his business.  
+(2) Where the goods or services or both are used by the registered person partly for effecting taxable 
+supplies including zero -rated supplies under this Act or under the Integrated Goods and Services Tax Act and 
+partly for effecting exempt supplies under the said Acts, the amount of credit shall be restricted to so much of 
+the input tax as is attributable to the said taxable supplies including zero -rated supplies.  
+(3) The value of exempt supply under sub -section ( 2) shall be such as may be prescribed, and shall 
+include supplies on which the recipient is liable to pay tax on reverse charge basis, transactions in 
+securities, sale of land and, subject to clause ( b) of paragraph 5 of Schedule II, sale of building.  
+3[Explanation. —For the purposes of this sub -section, the expression ‘‘value of exempt supply’’ shall 
+not include the value of activities or transactions specified in Schedule III,  4[except, — 
+(i) the value of activities or transactions specified in paragraph 5 of the said Schedule; and . 
+(ii) the value of such activities or transactions as may be prescribed in respect of clause ( a) of 
+paragraph 8 of the said Schedule .]] 
+(4) A banking company or a financial institution including a non -banking financial company, engaged 
+in supplying services by way of accepting deposits, extending loans or advances shall have the option to 
+either comply with the provisions of sub -section ( 2), or avail of, every month, an amount equal to fifty per 
+cent. of the eligible input tax credit on inputs, capital goods and input services in that month and the rest 
+shall lapse:
+
+1. Ins. by Order No. 02/2018 -Central Tax dated 31 -12-2018.
+
+2. Ins. by Act 15 of 2024, s. 11 8 (w.e.f. 1 -07-2017).
+
+3. Ins. by Act 31 of 2018, s. 9 (w.e.f. 1 -2-2019).
+
+4. Subs. by Act 8 of 2023, s. 139, for “ except those specified in paragraph 5 of the said Schedule” (w.e.f. 1 -10-2023).  
+32 
+ Provided that the option once exercised shall not be withdrawn during the remaining part of the 
+financial year:  
+Provided further that the restriction of fifty per cent. shall not apply to the tax paid on supplies made 
+by one registered person to another registered person having the same Permanent Account Number.  
+(5) Notwithstanding anything contained in sub -section ( 1) of section 16 and sub -section ( 1) of             
+section 18, input tax credit shall not be available in respect of the following, namely: — 
+1[(a) motor vehicles for transportation of persons having approved seating capacity of not more 
+than thirteen persons (including the driver), except when they are used for making the following 
+taxable supplies, namely: — 
+(A) further supply of such motor vehicles; or  
+(B) transportation of passengers; or  
+(C) imparting training on driving such motor vehicles;  
+(aa) vessels and aircraft except when they are used –– 
+(i) for making the following taxable supplies, namely: — 
+(A) further supply of such vessels or aircraft; or  
+(B) transportation of passengers; or  
+(C) imparting training on navigating such vessels; or  
+(D) imparting training on flying such aircraft;  
+(ii) for transportation of goods;  
+ (ab) services of general insurance, servicing, repair and maintenance in so far as they relate to 
+motor vehicles, vessels or aircraft referred to in clause ( a) or clause ( aa): 
+Provided that the input tax credit in respect of such services shall be available — 
+(i) where the motor vehicles, vessels or aircraft referred to in clause ( a) or clause ( aa) are 
+used for the purposes specified therein;  
+(ii) where received by a taxable person engaged — 
+(I) in the manufacture of such motor vehicles, vessels or aircraft; or  
+(II) in the supply of general insurance services in respect of such motor vehicles, vessels 
+or aircraft insured by him;  
+(b) the following supply of goods or services or both — 
+(i) food and beverages, outdoor catering, beauty treatment, health services, cosmetic and 
+plastic surgery, leasing, renting or hiring of motor vehicles, vessels or aircraft referred to in   
+clause ( a) or clause ( aa) except when used for the purposes specified therein, life insurance and 
+health insurance:  
+Provided that the input tax credit in respect of such goods or services or both shall be 
+available where an inward supply of such goods or services or both is used by a registered person 
+for making an outward taxable supply of the same category of goods or services or both or as an 
+element of a taxable composite or mixed supply;  
+(ii) membership of a club, health and fitness centre; and
+
+1. Subs. by Act 31 of 2018, s. 9, for clauses ( a) and ( b) (w.e.f. 1 -2-2019).  
+33 
+ (iii) travel benefits extended to employees on vacation such as leave or home travel 
+concession:  
+Provided that the input tax credit in respect of such goods or services or both shall be 
+available, where it is obligatory for an employer to provide the same to its employees under any 
+law for the time being in force.]  
+(c) works contract services when supplied for construction of an immovable property (other than 
+plant and machinery) except where it is an input service for further supply of works contract service;  
+(d) goods or services or both received by a taxable person for construction of an immovable property 
+(other than 1[plant and machinery ]) on his own account including when such goods or services or both 
+are used in the course or furtherance of business.  
+Explanation .––For the purposes of clauses ( c) and ( d), the expression “construction” includes            
+re-construction, renovation, additions or alterations or repairs, to the extent of capitalisation, to the 
+said immovable property;  
+(e) goods or services or both on which tax has been paid under section 10;  
+(f) goods or services or both received by a non -resident taxable person except on goods imported 
+by him;  
+2[(fa) goods or services or both received by a taxable person, which are used or intended to be 
+used for activities relating to his obligations under corporate social responsibility referred to in 
+section 135 of the Companies Act, 2013 (18 of 2013);]  
+(g) goods or services or both used for personal consumption;  
+(h) goods lost, stolen, destroyed, written off or disposed of by way of gift or free samples; and  
+(i) any tax paid in accordance with the provisions of 3[section 74 in respect of any period upto 
+Financial Year 2023 -24]. 
+(6) The Government may prescribe the manner in which the credit referred to in sub -sections ( 1)                
+and ( 2) may be attributed.  
+Explanation. ––For the purposes of this Chapter and Chapter VI, the expression “plant and machinery” 
+means apparatus, equipment, and machinery fixed to earth by foundation or structural support that are used for 
+making outward supply of goods or services or both and includes such foundation and structural supports but 
+excludes — 
+(i) land, building or any other civil structures;  
+(ii) telecommunication towers; and  
+(iii) pipelines laid outside the factory premises. ]
+
+18.  Availability of credit in special circumstances. —(1) Subject to such conditions and restrictions 
+as may be prescribed — 
+(a) a person who has applied for registration under this Act within thirty days from the date on 
+which he becomes liable to registration and has been granted such registration shall be entitled to take 
+credit of input tax in respect of inputs held in stock and inputs contained in semi -finished or finished 
+goods held in stock on the day immediately preceding the date from which he becomes liable to pay 
+tax under the provisions of this Act;
+
+1. Subs. by Act 7 of 2025, s. 124, for “plant or machinery” (w.e.f. 01 -07-2017).
+
+2. Ins. by Act 8 of 2023, s. 139 (w.e.f. 1 -10-2023).
+
+3. Subs. by Act 15 of 2024, s. 11 9, for “ sections 74, 129 and 130” (w.e.f. 1 -11-2024).  
+34 
+ (b) a person who takes registration under sub -section ( 3) of section 25 shall be entitled to take 
+credit of input tax in respect of inputs held in stock and inputs contained in semi -finished or finished 
+goods held in stock on the day immediately preceding the date of grant of registration;  
+(c) where any registered person ceases to pay tax under section 10, he shall be entitled to take 
+credit of input tax in respect of inputs held in stock, inputs contained in semi -finished or finished 
+goods held in stock and on capital goods on the day immediately preceding the date from which he 
+becomes liable to pay tax under section 9:  
+Provided that the credit on capital goods shall be reduced by such percentage points as may be 
+prescribed;  
+(d) where an exempt supply of goods or services or both by a registered person becomes a taxable 
+supply, such person shall be entitled to take credit of input tax in respect of inputs held in stock and 
+inputs contained in semi -finished or finished goods held in stock relatable to such exempt supply and on 
+capital goods exclusively used for such exempt supply on the day immediately preceding the date from 
+which such supply becomes taxable:  
+Provided that the credit on capital goods shall be reduced by such percentage points as may be 
+prescribed.  
+(2) A registered person shall not be entitled to take input tax credit under sub -section ( 1) in respect of 
+any supply of goods or services or both to him after the expiry of one year from the date of issue of tax 
+invoice relating to such supply.  
+(3) Where there is a change in the constitution of a registered person on account of sale, merger, demerger, 
+amalgamation, lease or transfer of the business with the specific provisions for transfer of liabilities, the said 
+registered person shall be allowed to transfer the input tax credit which remains unutilised in his electronic 
+credit ledger to such sold, merged, demerged, amalgamated, leased or transferred business in such manner as 
+may be prescribed.  
+(4) Where any registered person who has availed of input tax credit opts to pay tax under section 10 or, 
+where the goods or services or both supplied by him become wholly exempt, he shall pay an amount, by 
+way of debit in the electronic credit ledger or electronic cash ledger, equivalent to the credit of input tax in 
+respect of inputs held in stock and inputs contained in semi -finished or finished goods held in stock and on 
+capital goods, reduced by such percentage points as may be prescribed, on the day immediately preceding 
+the date of exercising of such option or, as the case may be, the date of such exemption:  
+Provided that after payment of such amount, the balance of input tax credit, if any, lying in his 
+electronic credit ledger shall lapse.  
+(5) The amount of credit under sub -section ( 1) and the amount payable under sub -section ( 4) shall be 
+calculated in such manner as may be prescribed.  
+(6) In case of supply of capital goods or plant and machinery, on which input tax credit has been taken, 
+the registered person shall pay an amount equal to the input tax credit taken on the said capital goods or plant 
+and machinery reduced by such percentage points as may be prescribed or the tax on the transaction value of 
+such capital goods or plant and machinery determined under section 15, whichever is higher:  
+Provided that where refractory bricks, moulds and dies, jigs and fixtures are supplied as scrap, the 
+taxable person may pay tax on the transaction value of such goods determined under section 15.
+
+19. Taking input tax credit in respect of inputs and capital goods sent for job work. —(1) The 
+principal shall, subject to such conditions and restrictions as may be prescribed, be allowed input tax 
+credit on inputs sent to a job worker for job work.  
+35 
+ (2) Notwithstanding anything contained in clause ( b) of sub -section ( 2) of section 16, the principal shall be 
+entitled to take credit of input tax on inputs even if the inputs are directly sent to a job worker for job work 
+without being first brought to his place of business.  
+(3) Where the inputs sent for job work are not received back by the principal after completion of job 
+work or otherwise or are not supplied from the place of business of the job worker in accordance with 
+clause ( a) or clause ( b) of sub -section ( 1) of section 143 within one year of being sent out, it shall be 
+deemed that such inputs had been supplied by the principal to the job worker on the day when the said 
+inputs were sent out:  
+Provided that where the inputs are sent directly to a job worker, the period of one year shall be 
+counted from the date of receipt of inputs by the job worker.  
+(4) The principal shall, subject to such conditions and restrictions as may be prescribed, be allowed input 
+tax credit on capital goods sent to a job worker for job work.  
+(5) Notwithstanding anything contained in clause ( b) of sub -section ( 2) of section 16, the principal 
+shall be entitled to take credit of input tax on capital goods even if the capital goods are directly sent to a 
+job worker for job work without being first brought to his place of business.  
+(6) Where the capital goods sent for job work are not received back by the principal within a period of 
+three years of being sent out, it shall be deemed that such capital goods had been supplied by the principal 
+to the job worker on the day when the said capital goods were sent out:  
+Provided that where the capital goods are sent directly to a job worker, the period of three years shall 
+be counted from the date of receipt of capital goods by the job worker.  
+(7) Nothing contained in sub -section ( 3) or sub -section ( 6) shall apply to moulds and dies, jigs and 
+fixtures, or tools sent out to a job worker for job work.  
+Explanation .––For the purpose of this section, “principal” means the person referred to in                 
+section 143.  
+1[20. Manner of distribution of credit by Input Service Distributor. —(1) Any office of the 
+supplier of goods or services or both which receives tax invoices towards the receipt of input services, 
+including invoices in respect of services liable to tax under sub -section ( 3) or sub -section ( 4) of section 9  
+2[of this Act or under sub-section (3) or sub -section (4) of section 5 of the Integrated Goods and Services 
+Tax Act, 2017 (13 of 2017)] , for or on behalf of distinct persons referred to in section 25, shall be 
+required to be registered as Input Service Distributor under clause ( viii) of section 24 and shall distribute 
+the input tax credit in respect of such invoices.  
+(2) The Input Service Distributor shall distribute the credit of central tax or integrated tax charged on 
+invoices received by him, including the credit of central or integrated tax in respect of services subject to 
+levy of tax under sub -section ( 3) or sub -section ( 4) of section 9  2[of this Act or under sub -section (3) or 
+sub-section (4) of section 5 of the Integrated Goods and Services Tax Act, 2017 (13 of 2017),]  paid by a 
+distinct person registered in the same State as the said Input Service Distributor, in such manner, within 
+such time and subject to such restrictions and conditions as may be prescribed.  
+(3) The credit of central tax shall be distributed as central tax or integrated tax and integrated tax as 
+integrated tax or central tax, by way of issue of a document containing the amount of input tax credit, in 
+such manner as may be prescribed.]
+
+21. Manner of recovery of credit distributed in excess. —Where the Input Service Distributor 
+distributes the credit in contravention of the provisions contained in section 20 resulting in excess
+
+1. Subs. by Act 8 of 2024, s. 12, for section 20 (w.e.f. 1 -4-2025).
+
+2. Ins. by Act 7 of 2025, s. 125 (w.e.f. 1 -4-2025).  
+36 
+ distribution of credit to one or more recipients of credit, the excess credit so distributed shall be 
+recovered from such recipients along with interest, and the provisions of section 73 or                       
+section 74   1[or section 74A] , as the case may be, shall, mutatis mutandis , apply for determination of 
+amount to be recovered.  
+CHAPTER VI  
+REGISTRATION
+
+22. Persons liable for registration. —(1) Every supplier shall be liable to be registered under this Act 
+in the State or Union territory, other than special category States, from where he makes a taxable supply 
+of goods or services or both, if his aggregate turnover in a financial year exceeds twenty lakh rupees:  
+Provided that where such person makes taxable supplies of goods or services or both from any of the 
+special category States, he shall be liable to be registered if his aggregate turnover in a financial year 
+exceeds ten lakh rupees.  
+2[Provided further that the Government may, at the request of a special category State and on the 
+recommendations of the Council, enhance the aggregate turnover referred to in the first proviso from ten 
+lakh rupees to such amount, not exceeding twenty lakh rupees and subject to such conditions and 
+limitations, as may be so notified.]  
+3[Provided also that the Government may, at the request of a State and on the recommendations of the 
+Council, enhance the aggregate turnover from twenty lakh rupees to such amount not exceeding forty lakh 
+rupees in case of supplier who is engaged exclusively in the supply of goods, subject to such conditions 
+and limitations, as may be notified.  
+Explanation .—For the purposes of this sub -section, a person shall be considered to be engaged 
+exclusively in the supply of goods even if he is engaged in exempt supply of services provided by way of 
+extending deposits, loans or advances in so far as the consideration is represented by way of interest or 
+discount.]  
+(2) Every person who, on the day immediately preceding the appointed day, is registered or holds a 
+licence under an existing law, shall be liable to be registered under this Act with effect from the appointed 
+day. 
+(3) Where a business carried on by a taxable person registered under this Act is transferred, whether 
+on account of succession or otherwise, to another person as a going concern, the transferee or the 
+successor, as the case may be, shall be liable to be registered with effect from the date of such transfer or 
+succession.  
+(4) Notwithstanding anything contained in sub -sections ( 1) and ( 3), in a case of transfer pursuant to 
+sanction of a scheme or an arrangement for amalgamation or, as the case may be, demerger of two or more 
+companies pursuant to an order of a High Court, Tribunal or otherwise, the transferee shall be liable to be 
+registered, with effect from the date on which the Registrar of Companies issues a certificate of 
+incorporation giving effect to such order of the High Court or Tribunal.  
+Explanation. ––For the purposes of this section, –– 
+(i) the expression “aggregate turnover” shall include all supplies made by the taxable person, 
+whether on his own account or made on behalf of all his principals;
+
+1. Ins. by Act 15 of 2024, s. 120 (w.e.f. 1 -11-2024).
+
+2. Ins. by Act 31 of 2018, s. 11, (w.e.f. 1 -2-2019).
+
+3. Ins. by Act 23 of 2019, s. 94 (w.e.f. 1 -1-2020).  
+37 
+ (ii) the supply of goods, after completion of job work, by a registered job worker shall be treated 
+as the supply of goods by the principal referred to in section 143, and the value of such goods shall 
+not be included in the aggregate turnover of the registered job worker;  
+(iii) the expression “special category States” shall mean the States as specified in sub -clause ( g) 
+of clause ( 4) of article 279A of the Constitution  1[except the State of Jammu and Kashmir *] 2[and 
+States of Arunachal Pradesh, Assam, Himachal Pradesh, Me ghalaya, Sikkim and Uttarakhand ].
+
+23.  Persons not liable for registration. —(1) The following persons shall not be liable to registration, 
+namely: –– 
+(a) any person engaged exclusively in the business of supplying goods or services or both that are 
+not liable to tax or wholly exempt from tax under this Act or under the Integrated Goods and Services 
+Tax Act;  
+(b) an agriculturist, to the extent of supply of produce out of cultivation of land.  
+3[(2) Notwithstanding anything to the contrary contained in sub -section ( 1) of section 22 or                  
+section 24, the Government may, on the recommendations of the Council, by notification, subject to such 
+conditions and restrictions as may be specified therein,  specify the category of persons who may be 
+exempted from obtaining registration  under this Act. ]
+
+24. Compulsory registration in certain cases. —Notwithstanding anything contained in                      
+sub-section ( 1) of section 22, the following categories of persons shall be required to be registered under 
+this Act, –– 
+(i) persons making any inter -State taxable supply;  
+(ii) casual taxable persons making taxable supply;  
+(iii) persons who are required to pay tax under reverse charge;  
+(iv) person who are required to pay tax under sub -section ( 5) of section 9;  
+(v) non -resident taxable persons making taxable supply;  
+(vi) persons who are required to deduct tax under section 51, whether or not separately registered 
+under this Act;  
+(vii) persons who make taxable supply of goods or services or both on behalf of other taxable 
+persons whether as an agent or otherwise;  
+(viii) Input Service Distributor, whether or not separately registered under this Act;  
+(ix) persons who supply goods or services or both, other than supplies specified under                    
+sub-section ( 5) of section 9, through such electronic commerce operator who is required to collect tax 
+at source under section 52;  
+(x) every electronic commerce operator  4[who is required to collect tax at source under                   
+section 52] ; 
+(xi) every person supplying online information and database access or retrieval services from a 
+place outside India to a person in India, other than a registered person; 5*** 
+6[(xia) every person supplying online money gaming from a place outside India to a person in 
+India; and]
+
+1. Ins. by Act 26 of 2017, s. 2 (w.e.f. 8 -7-2017).  
+*. Vide notification No. S.O. 3912(E), dated 30th October, 2019, this Act is made applicable to the Union territory of Jammu and 
+Kashmir and the Union territory of Ladakh.
+
+2. Ins. by Act 31 of 2018, s. 11 (w.e.f. 1 -2-2019).
+
+3. Subs. by Act 8 of 2023, s. 140, for sub -section ( 2) (w.e.f. 1 -7-2017).
+
+4. Ins. by Act 31 of 2018, s. 12 (w.e.f. 1 -2-2019).
+
+5. The word “and” omitted by Act 30 of 2023, s. 3 (w.e.f. 1 -10-2023).
+
+6. Ins. by s. 3, ibid. (w.e.f. 1 -10-2023).  
+38 
+ (xii) such other person or class of persons as may be notified by the Government on the 
+recommendations of the Council.
+
+25. Procedure for registration. —(1) Every person who is liable to be registered under section 22 or 
+section 24 shall apply for registration in every such State or Union territory in which he is so liable within 
+thirty days from the date on which he becomes liable to registration, in such manner and subject to such 
+conditions as may be prescribed:  
+Provided that a casual taxable person or a non -resident taxable person shall apply for registration at 
+least five days prior to the commencement of business.  
+1[Provided further that a person having a unit, as defined in the Special Economic Zones Act, 2005,  
+(28 of 2005)  in a Special Economic Zone or being a Special Economic Zone developer shall have to apply 
+for a separate registration, as distinct from his place of business located outside the Special Economic 
+Zone in the same State or Union territory.]  
+Explanation .—Every person who makes a supply from the territorial waters of India shall obtain 
+registration in the coastal State or Union territory where the nearest point of the appropriate baseline is 
+located.  
+(2) A person seeking registration under this Act shall be granted a single registration in a State or 
+Union territory:  
+2[Provided that a person having multiple places of business in a State or Union territory may be 
+granted a separate registration for each such place of business, subject to such conditions as may be 
+prescribed.]  
+(3) A person, though not liable to be registered under section 22 or section 24 may get himself 
+registered voluntarily, and all provisions of this Act, as are applicable to a registered person, shall apply to 
+such person.  
+(4) A person who has obtained or is required to obtain more than one registration, whether in one 
+State or Union territory or more than one State or Union territory shall, in respect of each such 
+registration, be treated as distinct persons for the purposes of this Act.  
+(5) Where a person who has obtained or is required to obtain registration in a State or Union territory 
+in respect of an establishment, has an establishment in another State or Union territory, then such 
+establishments shall be treated as establishments of distinct persons for the purposes of this Act.  
+(6) Every person shall have a Permanent Account Number issued under the Income -tax Act, 1961         
+(43 of 1961) in order to be eligible for grant of registration:  
+Provided that a person required to deduct tax under section 51 may have, in lieu of a Permanent 
+Account Number, a Tax Deduction and Collection Account Number issued under the said Act in order to 
+be eligible for grant of registration.  
+3[(6A) Every  registered person shall undergo authentication, or furnish proof of possession of 
+Aadhaar number, in such form and manner and within such time as may be prescribed:  
+Provided that if an Aadhaar number is not assigned to the registered person, such person shall be 
+offered alternate and viable means of identification in such manner as Government may, on the 
+recommendations of the Council, prescribe:  
+Provided further that in case of failure to undergo authentication or furnish proof of possession of 
+Aadhaar number or furnish alternate and viable means of identification, registration allotted to such 
+person shall be deemed to be invalid and the other provisions of this Act shall apply as if such person 
+does not have a registration.
+
+1. Ins. by Act 31 of 2018, s. 13 (w.e.f. 1 -2-2019).
+
+2. Subs. by s. 13, ibid., for the proviso (w.e.f. 1 -2-2019).
+
+3. Ins. by Act 23 of 2019, s. 95 (w.e.f. 1 -1-2020).  
+39 
+ (6B) On and from the date of notification, every individual shall, in order to be eligible for grant of 
+registration, undergo authentication, or furnish proof of possession of Aadhaar number, in such manner as 
+the Government may, on the recommendations of the Council, specify in the said notification:  
+Provided that if an Aadhaar number is not assigned to an individual, such individual shall be offered 
+alternate and viable means of identification in such manner as the Government may, on the 
+recommendations of the Council, specify in the said notification.  
+(6C) On and from the date of notification, every person, other than an individual, shall, in order to be 
+eligible for grant of registration, undergo authentication, or furnish proof of possession of Aadhaar 
+number of the Karta, Managing Director, whole time Director, such number of partners, Members of 
+Managing Committee of Association, Board of Trustees, authorised representative, authorised signatory 
+and such other class of persons, in such manner, as the Government may, on the recommendations of the 
+Council, specify in the said notification:  
+Provided that where such person or class of persons have not been assigned the Aadhaar Number, 
+such person or class of persons shall be offered alternate and viable means of identification in such 
+manner as the Government may, on the recommendations of the Council, specify in the said notification.  
+(6D) The provisions of sub -section ( 6A) or sub -section ( 6B) or sub -section ( 6C) shall not apply to 
+such person or class of persons or any State or Union territory or part thereof, as the Government may, on 
+the recommendations of the Council, specify by notification.  
+Explanation .—For the purposes of this section, the expression “Aadhaar number ” shall have the same 
+meaning as assigned to it in clause ( a) of section  2 of the Aadhaar (Targeted Delivery of Financial and 
+Other Subsidies, Benefits and Services) Act, 2016 (18 of 2016).]  
+(7) Notwithstanding anything contained in sub -section ( 6), a non -resident taxable person may be 
+granted registration under sub -section ( 1) on the basis of such other documents as may be prescribed.  
+(8) Where a person who is liable to be registered under this Act fails to obtain registration, the proper 
+officer may, without prejudice to any action which may be taken under this Act or under any other law for 
+the time being in force, proceed to register such person in such manner as may be prescribed.  
+(9) Notwithstanding anything contained in sub -section ( 1),–– 
+(a) any specialised agency of the United Nations Organisation or any Multilateral Financial 
+Institution and Organisation notified under the United Nations (Privileges and Immunities) Act, 1947 
+(46 of 1947), Consulate or Embassy of foreign countries; and  
+(b) any other person or class of persons, as may be notified by the Commissioner,  
+shall be granted a Unique Identity Number in such manner and for such purposes, including refund of 
+taxes on the notified supplies of goods or services or both received by them, as may be prescribed.  
+(10) The registration or the Unique Identity Number shall be granted or rejected after due verification 
+in such manner and within such period as may be prescribed.  
+(11) A certificate of registration shall be issued in such form and with effect from such date as may be 
+prescribed.  
+(12) A registration or a Unique Identity Number shall be deemed to have been granted after the expiry 
+of the period prescribed under sub -section ( 10), if no deficiency has been communicated to the applicant 
+within that period.
+
+26. Deemed registration. —(1) The grant of registration or the Unique Identity Number under the State 
+Goods and Services Tax Act or the Union Territory Goods and Services Tax Act shall be deemed to be a 
+grant of registration or the Unique Identity Number under this Act subject to the condition that the application 
+for registration or the Unique Identity Number has not been rejected under this Act within the time specified 
+in sub -section ( 10) of section 25.  
+(2) Notwithstanding anything contained in sub -section ( 10) of section 25, any rejection of application 
+for registration or the Unique Identity Number under the State Goods and Services Tax Act or the Union 
+40 
+ Territory Goods and Services Tax Act shall be deemed to be a rejection of application for registration 
+under this Act.
+
+27. Special provisions relating to casual taxable person and non -resident taxable person. —(1) 
+The certificate of registration issued to a casual taxable person or a non -resident taxable person shall be 
+valid for the period specified in the application for registration or ninety days from the effective date of 
+registration, whichever is earlier and such person shall make taxable supplies only after the issuance of 
+the certificate of registration:  
+Provided that the proper officer may, on sufficient cause being shown by the said taxable person, 
+extend the said period of ninety days by a further period not exceeding ninety days.  
+(2) A casual taxable person or a non -resident taxable person shall, at the time of submission of 
+application for registration under sub -section ( 1) of section 25, make an advance deposit of tax in an 
+amount equivalent to the estimated tax liability of such person for the period for which the registration is 
+sought:  
+Provided that where any extension of time is sought under sub -section ( 1), such taxable person shall 
+deposit an additional amount of tax equivalent to the estimated tax liability of such person for the period 
+for which the extension is sought.  
+(3) The amount deposited under sub -section ( 2) shall be credited to the electronic cash ledger of 
+such person and shall be utilised in the manner provided under section 49.
+
+28. Amendment of registration. —(1) Every registered person and a person to whom a Unique 
+Identity Number has been assigned shall inform the proper officer of any changes in the information 
+furnished at the time of registration or subsequent thereto, in such form and manner and within such 
+period as may be prescribed.  
+(2) The proper officer may, on the basis of information furnished under sub -section ( 1) or as 
+ascertained by him, approve or reject amendments in the registration particulars in such manner and 
+within such period as may be prescribed:  
+Provided that approval of the proper officer shall not be required in respect of amendment of such 
+particulars as may be prescribed:  
+Provided further that the proper officer shall not reject the application for amendment in the registration 
+particulars without giving the person an opportunity of being heard.  
+(3) Any rejection or approval of amendments under the State Goods and Services Tax Act or the 
+Union Territory Goods and Services Tax Act, as the case may be, shall be deemed to be a rejection or 
+approval under this Act.
+
+29. Cancellation 1[or suspension] of registration. —(1) The proper officer may, either on his own 
+motion or on an application filed by the registered person or by his legal heirs, in case of death of such 
+person, cancel the registration, in such manner and within such period as may be prescribed, having 
+regard to the circumstances where, –– 
+(a) the business has been discontinued, transferred fully for any reason including death of the 
+proprietor, amalgamated with other legal entity, demerged or otherwise disposed of; or  
+(b) there is any change in the constitution of the business; or  
+2[(c) the taxable person is no longer liable to be registered under section 22 or section 24 or 
+intends to optout of the registration voluntarily made under sub -section ( 3) of section 25:]
+
+1. Ins. by Act 31 of 2018, s. 14 (w.e.f. 1 -2-2019).
+
+2. Subs. by Act 12 of 2020, s. 121, for clause ( c) (w.e.f. 1 -1-2021).  
+41 
+ 1[Provided that during pendency of the proceedings relating to cancellation of registration filed by 
+the registered person, the registration may be suspended for such period and in such manner as may 
+be prescribed.]  
+(2) The proper officer may cancel the registration of a person from such date, including any 
+retrospective date, as he may deem fit, where, –– 
+(a) a registered person has contravened such provisions of the Act or the rules made thereunder as 
+may be prescribed; or  
+(b) a person paying tax under section 10 has not furnished 2[the return for a financial year beyond 
+three months from the due date of furnishing the said return ]; or 
+(c) any registered person, other than a person specified in clause ( b), has not furnished returns for 
+3[such continuous tax period as may be prescribed ]; or 
+(d) any person who has taken voluntary registration under sub -section ( 3) of section 25 has not 
+commenced business within six months from the date of registration; or  
+(e) registration has been obtained by means of fraud, wilful misstatement or suppression of facts:  
+Provided that the proper officer shall not cancel the registration without giving the person an 
+opportunity of being heard.  
+ 2[Provided further that during pendency of the proceedings relating to cancellation of registration, the 
+proper officer may suspend the registration for such period and in such manner as may be prescribed.]  
+(3) The cancellation of registration under this section shall not affect the liability of the person to pay tax 
+and other dues under this Act or to discharge any obligation under this Act or the rules made thereunder for 
+any period prior to the date of cancellation whether or not such tax and other dues are determined before or 
+after the date of cancellation.  
+(4) The cancellation of registration under the State Goods and Services Tax Act or the Union 
+Territory Goods and Services Tax Act, as the case may be, shall be deemed to be a cancellation of 
+registration under this Act.  
+(5) Every registered person whose registration is cancelled shall pay an amount, by way of debit in the 
+electronic credit ledger or electronic cash ledger, equivalent to the credit of input tax in respect of inputs 
+held in stock and inputs contained in semi -finished or finished goods held in stock or capital goods or plant 
+and machinery on the day immediately preceding the date of such cancellation or the output tax payable on 
+such goods, whichever is higher, calculated in such manner as may be prescribed:  
+Provided that in case of capital goods or plant and machinery, the taxable person shall pay an amount 
+equal to the input tax credit taken on the said capital goods or plant and machinery, reduced by such 
+percentage points as may be prescribed or the tax on the transaction value of such capital goods or plant 
+and machinery under section 15, whichever is higher.  
+(6) The amount payable under sub -section ( 5) shall be calculated in such manner as may be 
+prescribed.
+
+30. Revocation of cancellation of registration. —(1) Subject to such conditions as may be prescribed, 
+any registered person, whose registration is cancelled by the proper officer on his own motion, may apply to 
+such officer for revocation of cancellation of the registration in 4[such manner, within such time and subject 
+to such conditions and restrictions, as may be prescribed. ]
+
+1. Ins. by Act 31 of 2018, s. 14 (w.e.f. 1 -2-2019).
+
+2. Subs. by Act 6 of 2022, s. 101, for “ returns for three consecutive tax periods” (w.e.f. 1 -10-2022).
+
+3. Subs. by s. 101, ibid., for “ a continuous period of six months” (w.e.f. 1 -10-2022).
+
+4. Subs. by Act 8 of 2023, s. 141, for “ the prescribed manner within thirty days from the date of service of the cancellation 
+order:” (w.e.f. 1 -10-2023).   
+42 
+ 1[*   *   *   *   *.] 
+(2) The proper officer may, in such manner and within such period as may be prescribed, by order, either 
+revoke cancellation of the registration or reject the application:  
+Provided that the application for revocation of cancellation of registration shall not be rejected unless 
+the applicant has been given an opportunity of being heard.  
+2[Provided further that such revocation of cancellation of registration shall be subject to such 
+conditions and restrictions, as may be prescribed.]  
+(3) The revocation of cancellation of registration under the State Goods and Services Tax Act or the 
+Union Territory Goods and Services Tax Act, as the case may be, shall be deemed to be a revocation of 
+cancellation of registration under this Act.  
+CHAPTER VII  
+TAX INVOICE, CREDIT AND DEBIT NOTES
+
+31. Tax invoice. —(1) A registered person supplying taxable goods shall, before or at the time of, — 
+(a) removal of goods for supply to the recipient, where the supply involves movement of goods; 
+or 
+(b) delivery of goods or making available thereof to the recipient, in any other case,  
+issue a tax invoice showing the description, quantity and value of goods, the tax charged thereon and such 
+other particulars as may be prescribed:  
+Provided that the Government may, on the recommendations of the Council, by notification, specify 
+the categories of goods or supplies in respect of which a tax invoice shall be issued, within such time and 
+in such manner as may be prescribed.  
+(2) A registered person supplying taxable services shall, before or after the provision of service but 
+within a prescribed period, issue a tax invoice, showing the description, value, tax charged thereon and such 
+other particulars as may be prescribed:  
+3[Provided that the Government may, on the recommendations of the Council, by notification, –– 
+(a) specify the categories of services or supplies in respect of which a tax invoice shall be issued, 
+within such time and in such manner as may be prescribed;  
+(b) subject to the condition mentioned therein, specify the categories of services in respect of 
+which –– 
+(i) any other document issue in relation to the supply shall be deemed to be  a tax invoice; or  
+(ii) tax invoice may not be issued.]  
+(3) Notwithstanding anything contained in sub -sections ( 1) and ( 2)–– 
+(a) a registered person may, within one month from the date of issuance of certificate of registration 
+and in such manner as may be prescribed, issue a revised invoice against the invoice already issued during 
+the period beginning with the effective date of registration till the date of issuance of certificate of 
+registration to him;  
+(b) a registered person may not issue a tax invoice if the value of the goods or services or both 
+supplied is less than two hundred rupees subject to such conditions and in such manner as may be 
+prescribed;
+
+1. The proviso o mitted by Act 8 of 2023 , s. 141, (w.e.f. 1 -10-2023).
