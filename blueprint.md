@@ -15,18 +15,13 @@ The project is a basic React application initialized with Vite and TypeScript.
 
 ## Current Plan
 ### Objective
-Refine the Firestore search logic to be more robust by running parallel queries against `section_index` and merging the results.
+Create a Firestore collection named `laws` that will be dynamically populated.
 
 ### Steps
-1.  **Search Logic Update (Completed):**
-    *   Modified `src/App.tsx` to run three parallel Firestore queries:
-        *   `Query A`: `sectionNumberSearch` array-contains `userInput`
-        *   `Query B`: `searchTerms` array-contains `userInput`
-        *   `Query C`: `sectionTitle` range query (>= `userInput` AND <= `userInput + '\uf8ff'`)
-    *   Merged results on the client side, removing duplicates by document ID.
-    *   Limited final results to 10 items.
-    *   Ensured all user input is lowercased before querying.
+1.  **Firestore Collection Creation:**
+    *   A Firestore collection named `laws` has been conceptually created.
+    *   This collection will be populated dynamically, no manual documents or sample data will be added at this stage.
 
 ## Clarifications and Limitations
 *   **External PDF Analysis:** I cannot directly analyze the content of external PDF documents from provided URLs.
-*   **Firebase Database Population:** I will use mock data for now as requested, until the database is populated.
+*   **Firebase Database Population:** The `laws` collection will be populated dynamically, and no mock data or manual documents will be added at this stage.

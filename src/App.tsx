@@ -3,9 +3,10 @@ import { Routes, Route, useNavigate, useParams, Link } from 'react-router-dom';
 import { Search, Scale, FileText, Clock, BookOpen, ChevronRight, Info, ShieldAlert, Gavel, ExternalLink, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from './lib/utils';
-import { collection, query as firestoreQuery, where, getDocs, limit, orderBy, startAt, endAt, doc, getDoc, type DocumentData } from "firebase/firestore";
+import { collection, query as firestoreQuery, where, getDocs, limit, orderBy, startAt, endAt, doc, getDoc, setDoc, serverTimestamp, updateDoc, type DocumentData } from "firebase/firestore";
 // @ts-ignore
 import { db } from "./firebase"; 
+import { extractSectionText } from './lib/pdf-utils';
 
 // --- Shared Components ---
 
@@ -46,6 +47,7 @@ interface Section {
   amendments: TimelineEvent[];
   circulars: TimelineEvent[];
   caseLaws: TimelineEvent[];
+  bare_text?: string; // Add bare_text to Section interface
 }
 
 // Interface for Firestore document results
@@ -63,13 +65,14 @@ interface FirestoreSectionResult {
     amendments?: TimelineEvent[];
     circulars?: TimelineEvent[];
     caseLaws?: TimelineEvent[];
+    bare_text?: string; // Add bare_text to FirestoreSectionResult
 }
 
 function SearchBar() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<FirestoreSectionResult[]>([]);
   const [isFocused, setIsFocused] = useState(false);
-  // const navigate = useNavigate(); // Navigation disabled per requirements
+  const navigate = useNavigate(); // Navigation enabled
 
   useEffect(() => {
     const fetchResults = async () => {
@@ -198,9 +201,9 @@ function SearchBar() {
                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Suggested Results</span>
             </div>
             {results.map((result) => (
-              <div
+              <Link
                 key={result.id}
-                // onClick={() => navigate(`/section/${result.id}`)} // Disabled as per requirements
+                to={`/section/${result.id}`}
                 className="p-6 cursor-default border-b border-slate-50 hover:bg-slate-50 flex items-center justify-between group transition-colors"
               >
                 <div>
@@ -217,7 +220,7 @@ function SearchBar() {
                   )}>
                     {result.lawType === 'INCOME_TAX' ? 'Income Tax' : 'GST'}
                 </span>
-              </div>
+              </Link>
            ))}
           </motion.div>
         )}
@@ -323,42 +326,105 @@ function TimelineView({ events }: { events: TimelineEvent[] }) {
 
 function SectionDetailPage() {
   const { id } = useParams();
-  const [activeTab, setActiveTab] = useState('synopsis');
+  const [activeTab, setActiveTab] = useState('bare_text'); // Default to bare text first
   const [sectionData, setSectionData] = useState<Section | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [ingestStatus, setIngestStatus] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchSectionData = async () => {
       setLoading(true);
       setError(null);
+      setIngestStatus(null);
       if (!id) return;
 
       try {
-        const docRef = doc(db, "section_index", id);
+        const docRef = doc(db, "laws", id); // Fetch from 'laws' collection
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
+          // Document Exists - Load it
           const firestoreData = docSnap.data() as FirestoreSectionResult;
           setSectionData({
               id: firestoreData.id,
               number: firestoreData.sectionNumber,
               name: firestoreData.sectionTitle,
               type: firestoreData.lawType === 'INCOME_TAX' ? 'Income Tax' : 'GST',
-              family: firestoreData.family || "Law Family Info Loading...",
-              synopsis: firestoreData.synopsis || "Detailed synopsis not yet available in database.",
+              family: firestoreData.family || "Law Family Info",
+              synopsis: firestoreData.synopsis || "Detailed synopsis not yet available.",
               benchmarks: firestoreData.benchmarks || "",
               amendments: firestoreData.amendments || [],
               circulars: firestoreData.circulars || [],
-              caseLaws: firestoreData.caseLaws || []
+              caseLaws: firestoreData.caseLaws || [],
+              bare_text: firestoreData.bare_text || "" 
           });
+          setLoading(false);
         } else {
-          setError("Section not found in database.");
+          // Document NOT Found - Ingest
+          console.log(`FIRST_LOAD:${id}`);
+          setIngestStatus("Loading official legal text...");
+          
+          // 1. Get Metadata from Index first
+          const indexRef = doc(db, "section_index", id);
+          const indexSnap = await getDoc(indexRef);
+          
+          if (!indexSnap.exists()) {
+             setError("Section index not found. Cannot ingest.");
+             setLoading(false);
+             return;
+          }
+
+          const indexData = indexSnap.data();
+          const sectionNumber = indexData.sectionNumber;
+
+          // 2. Perform Extraction
+          try {
+             const extractionResult = await extractSectionText(sectionNumber);
+             
+             // 3. Store in Firestore
+             const newLawData = {
+                bare_text: extractionResult.text,
+                lawType: indexData.lawType,
+                sectionNumber: indexData.sectionNumber,
+                sectionTitle: indexData.sectionTitle,
+                source_url: "https://incometaxindia.gov.in/Documents/income-tax-act-1961-as-amended-by-finance-act-2025.pdf",
+                extraction_source: extractionResult.sourceType,
+                confidence: extractionResult.confidence,
+                ingested_at: serverTimestamp(),
+                verification_status: "AUTO_GENERATED"
+             };
+
+             await setDoc(docRef, newLawData);
+
+             // 4. Update Index Status
+             await updateDoc(indexRef, { status: "LOADED" });
+
+             // 5. Set State
+             setSectionData({
+                id: id,
+                number: indexData.sectionNumber,
+                name: indexData.sectionTitle,
+                type: indexData.lawType === 'INCOME_TAX' ? 'Income Tax' : 'GST',
+                family: "Newly Ingested",
+                synopsis: "Synopsis pending generation.",
+                benchmarks: "",
+                amendments: [],
+                circulars: [],
+                caseLaws: [],
+                bare_text: extractionResult.text
+             });
+             setLoading(false);
+
+          } catch (extractionError) {
+             console.error("Ingestion failed:", extractionError);
+             setError("Official legal text unavailable or could not be extracted.");
+             setLoading(false);
+          }
         }
       } catch (err) {
         console.error("Error fetching section:", err);
         setError("Failed to load section data.");
-      } finally {
         setLoading(false);
       }
     };
@@ -368,8 +434,11 @@ function SectionDetailPage() {
 
   if (loading) {
       return (
-          <div className="min-h-screen flex items-center justify-center bg-[#FDFCFC]">
-              <div className="w-16 h-16 border-4 border-slate-200 border-t-slate-900 rounded-full animate-spin"></div>
+          <div className="min-h-screen flex flex-col items-center justify-center bg-[#FDFCFC]">
+              <div className="w-16 h-16 border-4 border-slate-200 border-t-slate-900 rounded-full animate-spin mb-6"></div>
+              {ingestStatus && (
+                 <p className="text-slate-500 font-medium animate-pulse">{ingestStatus}</p>
+              )}
           </div>
       );
   }
@@ -378,7 +447,8 @@ function SectionDetailPage() {
       return (
           <div className="min-h-screen flex flex-col items-center justify-center bg-[#FDFCFC] gap-4">
               <ShieldAlert className="w-12 h-12 text-red-500" />
-              <h2 className="text-2xl font-bold text-slate-900">{error || "Section Not Found"}</h2>
+              <h2 className="text-2xl font-bold text-slate-900">{error}</h2>
+              <p className="text-slate-500">Please return to home and try another section.</p>
               <Link to="/" className="text-slate-500 hover:text-slate-900 underline">Return Home</Link>
           </div>
       );
@@ -386,6 +456,7 @@ function SectionDetailPage() {
 
   const tabs = [
     { id: 'synopsis', label: 'Synopsis', icon: BookOpen },
+    { id: 'bare_text', label: 'Bare Text', icon: FileText }, // New tab for Bare Text
     { id: 'limits', label: 'Key Limits', icon: ShieldAlert },
     { id: 'amendments', label: 'Amendments', icon: Clock },
     { id: 'circulars', label: 'Circulars', icon: FileText },
@@ -485,6 +556,19 @@ function SectionDetailPage() {
                     <TimelineView events={sectionData.circulars} />
                 ) : activeTab === 'caseLaws' ? (
                     <TimelineView events={sectionData.caseLaws} />
+                ) : activeTab === 'bare_text' ? ( // Render bare_text
+                    <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100">
+                        <div className="prose prose-xl prose-slate max-w-none text-slate-600 font-light leading-loose">
+                            <h2 className="text-3xl font-serif font-bold text-slate-900 mb-6">Bare Text</h2>
+                            {sectionData.bare_text ? (
+                                <p className="whitespace-pre-line">
+                                    {sectionData.bare_text}
+                                </p>
+                            ) : (
+                                <p className="text-slate-400 italic">Bare text not available for this section.</p>
+                            )}
+                        </div>
+                    </div>
                 ) : (
                     // Default / Synopsis View
                     <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100">
