@@ -1,20 +1,38 @@
-# Blueprint
+# Project Blueprint
 
 ## Overview
-This project is a React application set up with Vite. It has been configured to connect with Firebase, specifically Firestore.
+**Sectionify** is a premium, minimalist React application designed to navigate Indian Income Tax and GST laws. The goal is to provide a clean, high-end user experience with real-time search capabilities and detailed section views.
 
 ## Project Outline
-*   **React Application:** A basic React application initialized with Vite.
-*   **Firebase Integration:**
-    *   `src/firebase.js`: Contains the Firebase initialization code with your provided configuration and exports the Firestore database instance (`db`).
-    *   `.idx/mcp.json`: Configured for Firebase MCP.
-    *   `firebase` npm package: Installed as a dependency.
+### Initial State
+The project is a basic React application initialized with Vite and TypeScript.
 
-## Plan for Current Change: Link to Firebase Database
-1.  **Create `src/firebase.js`**: A new file was created to house the Firebase configuration and initialization.
-2.  **Update `.idx/mcp.json`**: The Firebase MCP configuration was added to this file to enable Firebase services within the workspace.
-3.  **Install Firebase SDK**: The `firebase` npm package was installed to provide the necessary libraries for interacting with Firebase.
-4.  **Import `getFirestore`**: The `getFirestore` function was imported and used to initialize the Firestore database instance.
-5.  **Updated Firebase Config**: The `firebaseConfig` object in `src/firebase.js` has been updated with your provided API key, auth domain, project ID, storage bucket, messaging sender ID, and app ID.
+### Implemented Features
+*   **Project Structure:** Initial setup with `blueprint.md`.
 
-Now you can use the `db` object (exported from `src/firebase.js`) in your React components to interact with your Firestore database.
+## Current Plan
+### Objective
+Develop the core UI of Sectionify, including the landing page with a search bar and the detailed section view with a carousel for related information.
+
+### Steps
+1.  **Setup & Configuration:**
+    *   Install necessary dependencies: `react-router-dom`, `tailwindcss`, `postcss`, `autoprefixer`, `lucide-react` (icons), `framer-motion` (animations), `clsx`, `tailwind-merge`.
+    *   Configure Tailwind CSS manually since the init command failed.
+2.  **Routing & Navigation:**
+    *   Set up `react-router-dom` in `App.tsx`.
+    *   Create routes for Home (`/`) and Section Detail (`/section/:id`).
+3.  **Mock Data:**
+    *   Create `src/lib/mockData.ts` to simulate the Firebase database response for Income Tax and GST sections.
+4.  **Components:**
+    *   **Header:** Minimalist header with "Sectionify" logo.
+    *   **SearchBar:** Real-time search component with animations and dropdown results using mock data.
+    *   **Home Page:** Hero section containing the Header and SearchBar.
+    *   **Section Detail Page:**
+        *   Display Section Name and Family.
+        *   Horizontal Carousel (or Tabs) for: AI Synopsis, Benchmark Info, Amendments, Circulars, Case Laws.
+5.  **Styling:**
+    *   Apply a premium, minimalist design using Tailwind CSS (fonts, spacing, shadows).
+
+## Clarifications and Limitations
+*   **External PDF Analysis:** I cannot directly analyze the content of external PDF documents from provided URLs.
+*   **Firebase Database Population:** I will use mock data for now as requested, until the database is populated.
