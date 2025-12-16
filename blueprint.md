@@ -9,29 +9,23 @@ The project is a basic React application initialized with Vite and TypeScript.
 
 ### Implemented Features
 *   **Project Structure:** Initial setup with `blueprint.md`.
+*   **Core UI:** Implemented Landing page, Search, and Section Details.
+*   **Mock Data:** Created `src/lib/mockData.ts`.
+*   **Firebase Integration:** Search logic updated to query Firestore directly using parallel queries for better search coverage.
 
 ## Current Plan
 ### Objective
-Develop the core UI of Sectionify, including the landing page with a search bar and the detailed section view with a carousel for related information.
+Refine the Firestore search logic to be more robust by running parallel queries against `section_index` and merging the results.
 
 ### Steps
-1.  **Setup & Configuration:**
-    *   Install necessary dependencies: `react-router-dom`, `tailwindcss`, `postcss`, `autoprefixer`, `lucide-react` (icons), `framer-motion` (animations), `clsx`, `tailwind-merge`.
-    *   Configure Tailwind CSS manually since the init command failed.
-2.  **Routing & Navigation:**
-    *   Set up `react-router-dom` in `App.tsx`.
-    *   Create routes for Home (`/`) and Section Detail (`/section/:id`).
-3.  **Mock Data:**
-    *   Create `src/lib/mockData.ts` to simulate the Firebase database response for Income Tax and GST sections.
-4.  **Components:**
-    *   **Header:** Minimalist header with "Sectionify" logo.
-    *   **SearchBar:** Real-time search component with animations and dropdown results using mock data.
-    *   **Home Page:** Hero section containing the Header and SearchBar.
-    *   **Section Detail Page:**
-        *   Display Section Name and Family.
-        *   Horizontal Carousel (or Tabs) for: AI Synopsis, Benchmark Info, Amendments, Circulars, Case Laws.
-5.  **Styling:**
-    *   Apply a premium, minimalist design using Tailwind CSS (fonts, spacing, shadows).
+1.  **Search Logic Update (Completed):**
+    *   Modified `src/App.tsx` to run three parallel Firestore queries:
+        *   `Query A`: `sectionNumberSearch` array-contains `userInput`
+        *   `Query B`: `searchTerms` array-contains `userInput`
+        *   `Query C`: `sectionTitle` range query (>= `userInput` AND <= `userInput + '\uf8ff'`)
+    *   Merged results on the client side, removing duplicates by document ID.
+    *   Limited final results to 10 items.
+    *   Ensured all user input is lowercased before querying.
 
 ## Clarifications and Limitations
 *   **External PDF Analysis:** I cannot directly analyze the content of external PDF documents from provided URLs.

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate, useParams, Link } from 'react-router-dom';
-import { Search, Scale, FileText, Clock, AlertCircle, BookOpen, ChevronRight, Info, ShieldAlert, Gavel, ExternalLink, Calendar } from 'lucide-react';
+import { Search, Scale, FileText, Clock, BookOpen, ChevronRight, Info, ShieldAlert, Gavel, ExternalLink, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from './lib/utils';
-import { mockSections, type Section, type TimelineEvent } from './lib/mockData';
-import { collection, query as firestoreQuery, where, getDocs, limit, orderBy, startAt, endAt, doc, getDoc } from "firebase/firestore";
+import { collection, query as firestoreQuery, where, getDocs, limit, orderBy, startAt, endAt, doc, getDoc, type DocumentData } from "firebase/firestore";
+// @ts-ignore
 import { db } from "./firebase"; 
 
 // --- Shared Components ---
@@ -27,6 +27,27 @@ function Header() {
 
 // --- Home Page ---
 
+interface TimelineEvent {
+  id: string;
+  date: string;
+  title: string;
+  description: string;
+  badge?: string; 
+}
+
+interface Section {
+  id: string;
+  number: string;
+  name: string;
+  type: "Income Tax" | "GST";
+  family: string;
+  synopsis: string;
+  benchmarks: string; 
+  amendments: TimelineEvent[];
+  circulars: TimelineEvent[];
+  caseLaws: TimelineEvent[];
+}
+
 // Interface for Firestore document results
 interface FirestoreSectionResult {
     id: string;
@@ -36,6 +57,12 @@ interface FirestoreSectionResult {
     searchTerms: string[];
     sectionNumberSearch?: string[]; 
     status: string;
+    family?: string;
+    synopsis?: string;
+    benchmarks?: string;
+    amendments?: TimelineEvent[];
+    circulars?: TimelineEvent[];
+    caseLaws?: TimelineEvent[];
 }
 
 function SearchBar() {
@@ -50,57 +77,55 @@ function SearchBar() {
         const lowercaseQuery = query.toLowerCase();
         const sectionIndexRef = collection(db, "section_index");
 
-        let combinedResults: FirestoreSectionResult[] = [];
-        const addedIds = new Set<string>();
-
         try {
-          // Query 1: sectionNumber (starts with)
-          const q1 = firestoreQuery(
-            sectionIndexRef,
-            orderBy("sectionNumber"),
-            startAt(lowercaseQuery),
-            endAt(lowercaseQuery + '\uf8ff'),
-            limit(10)
-          );
-          
-          const snapshot1 = await getDocs(q1);
-          snapshot1.forEach(doc => {
-            if (!addedIds.has(doc.id)) {
-              combinedResults.push({ id: doc.id, ...doc.data() as FirestoreSectionResult });
-              addedIds.add(doc.id);
-            }
-          });
-
-          // Query 2: searchTerms (array-contains for broad keyword match)
-          const q2 = firestoreQuery(
-              sectionIndexRef,
-              where("searchTerms", "array-contains", lowercaseQuery),
-              limit(10)
-          );
-          
-          const snapshot2 = await getDocs(q2);
-          snapshot2.forEach(doc => {
-            if (!addedIds.has(doc.id)) {
-              combinedResults.push({ id: doc.id, ...doc.data() as FirestoreSectionResult });
-              addedIds.add(doc.id);
-            }
-          });
-
-          // Query 3: sectionNumberSearch (array-contains for numeric prefix match)
-          const q3 = firestoreQuery(
+          // Query A: sectionNumberSearch array-contains userInput
+          const queryA = firestoreQuery(
               sectionIndexRef,
               where("sectionNumberSearch", "array-contains", lowercaseQuery),
               limit(10)
           );
 
-          const snapshot3 = await getDocs(q3);
-          snapshot3.forEach(doc => {
-            if (!addedIds.has(doc.id)) {
-              combinedResults.push({ id: doc.id, ...doc.data() as FirestoreSectionResult });
-              addedIds.add(doc.id);
-            }
-          });
+          // Query B: searchTerms array-contains userInput
+          const queryB = firestoreQuery(
+              sectionIndexRef,
+              where("searchTerms", "array-contains", lowercaseQuery),
+              limit(10)
+          );
+
+          // Query C: sectionTitle >= userInput and <= userInput + '\uf8ff'
+          const queryC = firestoreQuery(
+            sectionIndexRef,
+            orderBy("sectionTitle"),
+            startAt(lowercaseQuery),
+            endAt(lowercaseQuery + '\uf8ff'),
+            limit(10)
+          );
+
+          // Run in parallel
+          const [snapshotA, snapshotB, snapshotC] = await Promise.all([
+            getDocs(queryA),
+            getDocs(queryB),
+            getDocs(queryC)
+          ]);
           
+          const combinedResults: FirestoreSectionResult[] = [];
+          const addedIds = new Set<string>();
+
+          // Helper to process snapshots
+          const processSnapshot = (snapshot: any) => {
+              snapshot.forEach((doc: DocumentData) => {
+                  if (!addedIds.has(doc.id)) {
+                      const data = doc.data() as FirestoreSectionResult;
+                      combinedResults.push({ ...data, id: doc.id });
+                      addedIds.add(doc.id);
+                  }
+              });
+          };
+
+          processSnapshot(snapshotA);
+          processSnapshot(snapshotB);
+          processSnapshot(snapshotC);
+
           setResults(combinedResults.slice(0, 10)); // Ensure max 10 results
 
         } catch (error) {
@@ -205,7 +230,6 @@ function HomePage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center max-w-4xl mx-auto"
         >
-          {/* Removed Status Badge and Seed Button Container */}
           <h1 className="text-6xl md:text-8xl font-serif font-bold text-slate-900 mb-8 leading-[1.1] tracking-tight mt-12">
             Simplify Your <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-500">Legal Search.</span>
@@ -299,34 +323,23 @@ function SectionDetailPage() {
       if (!id) return;
 
       try {
-        // 1. Try to fetch from Firestore
         const docRef = doc(db, "section_index", id);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
           const firestoreData = docSnap.data() as FirestoreSectionResult;
-          
-          // 2. Hydrate with Mock Data if available (Lazy Loading Simulation)
-          // In a real app, you'd fetch the full details from a separate collection here
-          const mockMatch = mockSections.find(s => s.id === id);
-          
-          if (mockMatch) {
-             setSectionData(mockMatch);
-          } else {
-             // Basic fallback for non-mocked data (if you added more seeds manually)
-             setSectionData({
-                 id: firestoreData.id,
-                 number: firestoreData.sectionNumber,
-                 name: firestoreData.sectionTitle,
-                 type: firestoreData.lawType === 'INCOME_TAX' ? 'Income Tax' : 'GST',
-                 family: "Law Family Info Loading...", // Placeholder
-                 synopsis: "Detailed synopsis not yet available in database.",
-                 benchmarks: "",
-                 amendments: [],
-                 circulars: [],
-                 caseLaws: []
-             });
-          }
+          setSectionData({
+              id: firestoreData.id,
+              number: firestoreData.sectionNumber,
+              name: firestoreData.sectionTitle,
+              type: firestoreData.lawType === 'INCOME_TAX' ? 'Income Tax' : 'GST',
+              family: firestoreData.family || "Law Family Info Loading...",
+              synopsis: firestoreData.synopsis || "Detailed synopsis not yet available in database.",
+              benchmarks: firestoreData.benchmarks || "",
+              amendments: firestoreData.amendments || [],
+              circulars: firestoreData.circulars || [],
+              caseLaws: firestoreData.caseLaws || []
+          });
         } else {
           setError("Section not found in database.");
         }
@@ -408,7 +421,7 @@ function SectionDetailPage() {
                 {/* Visual Type Indicator */}
                 <div className="shrink-0">
                     <div className="w-20 h-20 rounded-2xl bg-slate-900 text-white flex flex-col items-center justify-center shadow-2xl">
-                        <span className="text-3xl font-serif font-bold">{sectionData.type === 'INCOME_TAX' ? 'IT' : 'GST'}</span>
+                        <span className="text-3xl font-serif font-bold">{sectionData.type === 'Income Tax' ? 'IT' : 'GST'}</span>
                     </div>
                 </div>
             </div>
