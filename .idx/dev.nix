@@ -23,6 +23,9 @@
         default.openFiles = [ "src/App.tsx" "src/App.ts" "src/App.jsx" "src/App.js" ];
       };
       # To run something each time the workspace is (re)started, use the `onStart` hook
+      onStart = {
+        generate-tailwind-css = "npx tailwindcss -i ./src/index.css -o ./src/output.css --minify";
+      };
     };
     # Enable previews and customize configuration
     previews = {

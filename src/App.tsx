@@ -2,14 +2,16 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate, useParams, Link } from 'react-router-dom';
 import { Search, Scale, FileText, Clock, AlertCircle, BookOpen, ChevronRight, Info, ShieldAlert, Gavel, ExternalLink, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from './lib/utils'; // Re-import cn from utils
+import { cn } from './lib/utils';
 import { mockSections, type Section, type TimelineEvent } from './lib/mockData';
+import { collection, query as firestoreQuery, where, getDocs, limit, orderBy, startAt, endAt, doc, getDoc } from "firebase/firestore";
+import { db } from "./firebase"; 
 
 // --- Shared Components ---
 
 function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-[100] h-24 px-6 md:px-12 flex items-center justify-between bg-white/90 backdrop-blur-xl border-b border-gray-100 transition-all">
+    <header className="fixed top-0 left-0 right-0 z-[100] h-24 px-6 md:px-12 flex items-center justify-center bg-white/90 backdrop-blur-xl border-b border-gray-100 transition-all">
       <Link to="/" className="flex items-center gap-4 group">
         <div className="w-12 h-12 bg-slate-900 text-white flex items-center justify-center rounded-xl shadow-lg group-hover:scale-105 transition-transform duration-300">
           <Scale className="w-6 h-6" />
@@ -19,36 +21,87 @@ function Header() {
            <span className="text-[10px] uppercase tracking-widest text-slate-500 mt-1">Legal Intelligence</span>
         </div>
       </Link>
-      
-      <nav className="hidden md:flex gap-1">
-        {['Home', 'Browse', 'About'].map((item) => (
-            <button key={item} className="px-5 py-2 text-sm font-medium text-slate-500 hover:text-slate-900 rounded-full hover:bg-slate-50 transition-all">
-                {item}
-            </button>
-        ))}
-      </nav>
     </header>
   );
 }
 
 // --- Home Page ---
 
+// Interface for Firestore document results
+interface FirestoreSectionResult {
+    id: string;
+    lawType: "INCOME_TAX" | "GST";
+    sectionNumber: string;
+    sectionTitle: string;
+    searchTerms: string[];
+    status: string;
+}
+
 function SearchBar() {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<Section[]>([]);
+  const [results, setResults] = useState<FirestoreSectionResult[]>([]);
   const [isFocused, setIsFocused] = useState(false);
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   useEffect(() => {
-    if (query.length > 1) {
-      const filtered = mockSections.filter(section =>
-        section.number.toLowerCase().includes(query.toLowerCase()) ||
-        section.name.toLowerCase().includes(query.toLowerCase())
-      );
-      setResults(filtered);
-    } else {
-      setResults([]);
-    }
+    const fetchResults = async () => {
+      if (query.length > 1) {
+        const lowercaseQuery = query.toLowerCase();
+        const sectionIndexRef = collection(db, "section_index");
+
+        let combinedResults: FirestoreSectionResult[] = [];
+        const addedIds = new Set<string>();
+
+        try {
+          // Query for sectionNumber (starts with)
+          const q1 = firestoreQuery(
+            sectionIndexRef,
+            orderBy("sectionNumber"),
+            startAt(lowercaseQuery),
+            endAt(lowercaseQuery + '\uf8ff'),
+            limit(10)
+          );
+          
+          const snapshot1 = await getDocs(q1);
+          snapshot1.forEach(doc => {
+            if (!addedIds.has(doc.id)) {
+              combinedResults.push({ id: doc.id, ...doc.data() as FirestoreSectionResult });
+              addedIds.add(doc.id);
+            }
+          });
+
+          // Query for searchTerms (array-contains for broad keyword match)
+          const q2 = firestoreQuery(
+              sectionIndexRef,
+              where("searchTerms", "array-contains", lowercaseQuery),
+              limit(10)
+          );
+          
+          const snapshot2 = await getDocs(q2);
+          snapshot2.forEach(doc => {
+            if (!addedIds.has(doc.id)) {
+              combinedResults.push({ id: doc.id, ...doc.data() as FirestoreSectionResult });
+              addedIds.add(doc.id);
+            }
+          });
+          
+          setResults(combinedResults.slice(0, 10)); // Ensure max 10 results
+
+        } catch (error) {
+          console.error("Firestore search error:", error);
+          setResults([]); // Clear results on error
+        }
+
+      } else {
+        setResults([]);
+      }
+    };
+
+    const handler = setTimeout(() => {
+        fetchResults();
+    }, 300); // Debounce search
+
+    return () => clearTimeout(handler);
   }, [query]);
 
   return (
@@ -62,8 +115,8 @@ function SearchBar() {
         <Search className="w-6 h-6 mr-4 text-slate-400" />
         <input
           type="text"
-          placeholder="Search Section 10(13A)..."
-          className="w-full h-full bg-transparent outline-none text-xl font-medium text-slate-900 placeholder:text-slate-300 font-sans"
+          placeholder="Search Section 10(13A), HRA, Levy..."
+          className="w-full h-full bg-transparent outline-none text-xl text-slate-900 placeholder:text-slate-300 font-sans"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setIsFocused(true)}
@@ -99,11 +152,18 @@ function SearchBar() {
               >
                 <div>
                   <div className="font-serif text-lg font-bold text-slate-900 group-hover:text-blue-900 transition-colors">
-                      {result.number}
+                      {result.sectionNumber}
                   </div>
-                  <div className="text-slate-500 text-sm mt-1">{result.name}</div>
+                  <div className="text-slate-500 text-sm mt-1">{result.sectionTitle}</div>
                 </div>
-                <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-slate-600 transition-all" />
+                <span className={cn(
+                    "px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase border",
+                    result.lawType === 'INCOME_TAX'
+                      ? "bg-emerald-50 text-emerald-700 border-emerald-100"
+                      : "bg-blue-50 text-blue-700 border-blue-100"
+                  )}>
+                    {result.lawType === 'INCOME_TAX' ? 'Income Tax' : 'GST'}
+                </span>
               </div>
            ))}
           </motion.div>
@@ -129,9 +189,12 @@ function HomePage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center max-w-4xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-8">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span className="text-xs font-semibold uppercase tracking-widest text-slate-600">Live Database v2.0</span>
+          {/* Status Badge */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-slate-600">Live Database v2.0</span>
+              </div>
           </div>
           
           <h1 className="text-6xl md:text-8xl font-serif font-bold text-slate-900 mb-8 leading-[1.1] tracking-tight">
@@ -216,9 +279,76 @@ function TimelineView({ events }: { events: TimelineEvent[] }) {
 function SectionDetailPage() {
   const { id } = useParams();
   const [activeTab, setActiveTab] = useState('synopsis');
-  const section = mockSections.find(s => s.id === id);
+  const [sectionData, setSectionData] = useState<Section | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  if (!section) return null;
+  useEffect(() => {
+    const fetchSectionData = async () => {
+      setLoading(true);
+      setError(null);
+      if (!id) return;
+
+      try {
+        // 1. Try to fetch from Firestore
+        const docRef = doc(db, "section_index", id);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const firestoreData = docSnap.data() as FirestoreSectionResult;
+          
+          // 2. Hydrate with Mock Data if available (Lazy Loading Simulation)
+          // In a real app, you'd fetch the full details from a separate collection here
+          const mockMatch = mockSections.find(s => s.id === id);
+          
+          if (mockMatch) {
+             setSectionData(mockMatch);
+          } else {
+             // Basic fallback for non-mocked data (if you added more seeds manually)
+             setSectionData({
+                 id: firestoreData.id,
+                 number: firestoreData.sectionNumber,
+                 name: firestoreData.sectionTitle,
+                 type: firestoreData.lawType === 'INCOME_TAX' ? 'Income Tax' : 'GST',
+                 family: "Law Family Info Loading...", // Placeholder
+                 synopsis: "Detailed synopsis not yet available in database.",
+                 benchmarks: "",
+                 amendments: [],
+                 circulars: [],
+                 caseLaws: []
+             });
+          }
+        } else {
+          setError("Section not found in database.");
+        }
+      } catch (err) {
+        console.error("Error fetching section:", err);
+        setError("Failed to load section data.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSectionData();
+  }, [id]);
+
+  if (loading) {
+      return (
+          <div className="min-h-screen flex items-center justify-center bg-[#FDFCFC]">
+              <div className="w-16 h-16 border-4 border-slate-200 border-t-slate-900 rounded-full animate-spin"></div>
+          </div>
+      );
+  }
+
+  if (error || !sectionData) {
+      return (
+          <div className="min-h-screen flex flex-col items-center justify-center bg-[#FDFCFC] gap-4">
+              <ShieldAlert className="w-12 h-12 text-red-500" />
+              <h2 className="text-2xl font-bold text-slate-900">{error || "Section Not Found"}</h2>
+              <Link to="/" className="text-slate-500 hover:text-slate-900 underline">Return Home</Link>
+          </div>
+      );
+  }
 
   const tabs = [
     { id: 'synopsis', label: 'Synopsis', icon: BookOpen },
@@ -228,14 +358,16 @@ function SectionDetailPage() {
     { id: 'caseLaws', label: 'Case Laws', icon: Gavel },
   ];
 
-  // Parse limits
-  const limitItems = section.benchmarks.split(/(?:\. |; )/).filter(Boolean).map(s => {
-      const parts = s.trim().replace(/^\d+\.\s*/, '').split(':');
-      return {
-          label: parts.length > 1 ? parts[0].trim() : 'Key Metric',
-          value: parts.length > 1 ? parts.slice(1).join(':').trim() : s.trim().replace(/^\d+\.\s*/, '')
-      };
-  });
+  // Parse limits safely
+  const limitItems = sectionData.benchmarks 
+    ? sectionData.benchmarks.split(/(?:\. |; )/).filter(Boolean).map(s => {
+        const parts = s.trim().replace(/^\d+\.\s*/, '').split(':');
+        return {
+            label: parts.length > 1 ? parts[0].trim() : 'Key Metric',
+            value: parts.length > 1 ? parts.slice(1).join(':').trim() : s.trim().replace(/^\d+\.\s*/, '')
+        };
+      }) 
+    : [];
 
   return (
     <div className="min-h-screen bg-[#FDFCFC] font-sans text-slate-900 selection:bg-slate-200">
@@ -247,9 +379,9 @@ function SectionDetailPage() {
         <div className="mb-12">
             {/* Breadcrumb */}
             <div className="flex flex-wrap items-center gap-2 text-sm text-slate-400 font-medium mb-8">
-                <span className="hover:text-slate-900 transition-colors cursor-pointer">{section.type}</span>
+                <span className="hover:text-slate-900 transition-colors cursor-pointer">{sectionData.type}</span>
                 <ChevronRight className="w-3 h-3" />
-                <span className="hover:text-slate-900 transition-colors cursor-pointer line-clamp-1">{section.family.split(':')[0]}</span>
+                <span className="hover:text-slate-900 transition-colors cursor-pointer line-clamp-1">{sectionData.family.split(':')[0]}</span>
                 <ChevronRight className="w-3 h-3" />
                 <span className="text-slate-900 font-semibold px-2 py-0.5 bg-slate-100 rounded-md">Current Section</span>
             </div>
@@ -257,17 +389,17 @@ function SectionDetailPage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-slate-100 pb-12">
                 <div className="max-w-4xl">
                     <h1 className="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-6 tracking-tight leading-tight">
-                        {section.number}
+                        {sectionData.number}
                     </h1>
                     <p className="text-2xl text-slate-500 font-light leading-relaxed">
-                        {section.name}
+                        {sectionData.name}
                     </p>
                 </div>
                 
                 {/* Visual Type Indicator */}
                 <div className="shrink-0">
                     <div className="w-20 h-20 rounded-2xl bg-slate-900 text-white flex flex-col items-center justify-center shadow-2xl">
-                        <span className="text-3xl font-serif font-bold">{section.type === 'Income Tax' ? 'IT' : 'GST'}</span>
+                        <span className="text-3xl font-serif font-bold">{sectionData.type === 'Income Tax' ? 'IT' : 'GST'}</span>
                     </div>
                 </div>
             </div>
@@ -304,23 +436,27 @@ function SectionDetailPage() {
             >
                 {/* Content Logic */}
                 {activeTab === 'limits' ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {limitItems.map((item, i) => (
-                            <InfoCard key={i} label={item.label} value={item.value} delay={i * 0.1} />
-                        ))}
-                    </div>
+                    limitItems.length > 0 ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {limitItems.map((item, i) => (
+                                <InfoCard key={i} label={item.label} value={item.value} delay={i * 0.1} />
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="p-8 text-slate-400 italic bg-white rounded-2xl border border-slate-100">No key limits data available.</div>
+                    )
                 ) : activeTab === 'amendments' ? (
-                    <TimelineView events={section.amendments} />
+                    <TimelineView events={sectionData.amendments} />
                 ) : activeTab === 'circulars' ? (
-                    <TimelineView events={section.circulars} />
+                    <TimelineView events={sectionData.circulars} />
                 ) : activeTab === 'caseLaws' ? (
-                    <TimelineView events={section.caseLaws} />
+                    <TimelineView events={sectionData.caseLaws} />
                 ) : (
                     // Default / Synopsis View
                     <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100">
                          <div className="prose prose-xl prose-slate max-w-none text-slate-600 font-light leading-loose">
                             <p className="whitespace-pre-line">
-                                {section.synopsis}
+                                {sectionData.synopsis}
                             </p>
                         </div>
                     </div>
